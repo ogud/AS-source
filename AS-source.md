@@ -68,11 +68,12 @@ In gerneral when Unicast is used, there is a "desire" by traffic engineers to gi
 When resolvers that cover large areas are used on the other hand things get harder for traffic sterring, this proposal is about creating a better framework that allows DNS and Trfaffic Engineering to coexist in a more privacy centric world. 
 
 ## New option AS-source 
-IANA is requested to allocate a new EDNS0 option (value TBD), named "ASsorce"
+IANA is requested to allocate a new EDNS0 option (value TBD), named "ASsource"
 This option contains 3 fields with fixed size of 12 bytes. 
-  -- AS number the query originated in 4 bytes
-  -- Resolver/Client Airport value  1 byte;  Resolver 1 Client 2 Hidden 0 
-  -- IATA Airport code  7 byes 
+  -- AS number the query originated from ; 4 bytes; 
+  -- Resolver/Client Airport value;  1 byte;  1 == Resolver,  2 == Client, 0 == Hidden
+  -- IATA Airport code;  3 bytes
+  -- Sub-region;   2 bytes 
 
 The AS number is the AS# the client address is advertised from,  the IATA airport code is the code for the nearest Airport either to Resolver or preferably to the client address as indicated by the flag. 
 
